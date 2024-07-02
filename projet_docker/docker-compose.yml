@@ -11,7 +11,7 @@ services:
   backend:
     build: ./backend
     ports:
-      - "5000:500"
+      - "50:5000"
     depends_on:
       - db
 
