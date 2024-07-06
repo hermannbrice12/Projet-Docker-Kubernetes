@@ -2,16 +2,16 @@ version: '3.8'
 
 services:
   frontend:
-    image: httpd:latest
+    image: nginx:latest
     ports:
       - "80:80"
     volumes:
-      - ./frontend:/usr/local/apache2/htdocs/
+      - ./frontend:/usr/share/nginx/html
 
   backend:
     build: ./backend
     ports:
-      - "5000:5000"
+      - "50:5000"
     depends_on:
       - db
 
@@ -27,3 +27,4 @@ services:
     build: ./API
     ports:
       - "3000:3000"
+
