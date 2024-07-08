@@ -18,9 +18,9 @@ services:
   db:
     image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD: example
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: mydatabase
-      MYSQL_USER: user
+      MYSQL_USER: osadmin
       MYSQL_PASSWORD: password
 
   api:
