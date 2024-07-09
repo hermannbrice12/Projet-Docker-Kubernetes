@@ -9,3 +9,13 @@ pipeline {
         }
     }
 }
+ stage('Test') {
+            steps {
+                script {
+                    docker.image("${params.DOCKER_IMAGE}:${params.DOCKER_TAG}").inside {
+                        sh 'echo "Running tests inside the container..."'
+                        
+                    }
+                }
+            }
+        }
