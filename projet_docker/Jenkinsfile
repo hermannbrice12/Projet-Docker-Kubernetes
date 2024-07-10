@@ -19,3 +19,14 @@ pipeline {
                 }
             }
         }
+
+        stage('Push') {
+            steps {
+                // Push the Docker image to Docker Hub
+                script {
+                    docker.withRegistry('', 'docker-hub-credentials') {
+                        docker.image("${DOCKER_IMAGE}").push('latest')
+                    }
+                }
+            }
+        }
