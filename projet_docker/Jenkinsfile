@@ -30,3 +30,11 @@ pipeline {
                 }
             }
         }
+
+        stage('Clean Up') {
+            steps {
+                // Clean up the Docker environment
+                sh 'docker rmi ${DOCKER_IMAGE}'
+            }
+        }
+    
