@@ -37,4 +37,10 @@ pipeline {
                 sh 'docker rmi ${DOCKER_IMAGE}'
             }
         }
- 
+    
+post {
+        always {
+            // Clean up the workspace after the build
+            deleteDir()
+        }
+    }
